@@ -1,0 +1,13 @@
+<hr>
+<%= form_for @movie do |f| %>
+
+电影名称
+<%= f.text_field :title %>
+<br>
+内容简介
+<br>
+<%= f.text_area :description %>
+<br>
+
+<%= f.submit "Submit", :disable_with => 'Submiting...' %>
+<% end %>
