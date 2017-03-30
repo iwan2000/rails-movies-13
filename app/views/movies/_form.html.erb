@@ -1,19 +1,15 @@
-<%= form_for @group do |f| %>
-<% if @movie.errors.any? %>
-<ul>
-  <% @movie.errors.full_messages.each do |msg| %>
-  <li><%= msg %></li>
-  <% end %>
-</ul>
-<% end %>
+<%= form_for @movie do |f| %>
 
-电影名称
-<%= f.text_field :title %>
-<br>
-内容简介
-<br>
-<%= f.text_area :description %>
-<br>
+<div class="form-group">
+  <div class="form-group string optional">
+    <%= f.label "title", :class => "string optional form-control" %>
+  </div>
 
-<%= f.submit "Submit", :disable_with => 'Submiting...' %>
-<% end %>
+    <div class="form-group string optional">
+      <%= f.label "description", :class => "string optional control-label" %>
+      <%= f.text_area :description, :class => "string optional form-control" %>
+    </div>
+
+  </div>
+  <%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submiting..." } %>
+  <% end %>  
