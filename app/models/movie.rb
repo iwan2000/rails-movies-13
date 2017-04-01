@@ -1,5 +1,5 @@
 class Movie < ApplicationRecord
   belongs_to :user
-  has_many :posts
+  has_many :reviews
   validates :title, presence: true
 end
