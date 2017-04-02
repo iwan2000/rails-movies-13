@@ -6,4 +6,8 @@ class User < ApplicationRecord
 
          has_many :movies
          has_many :reviews
+
+         has_many :movie_relationships
+         has_many :participated_movies, :though => :movie_relationships, :source => :movie
+
 end
