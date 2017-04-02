@@ -23,6 +23,7 @@ class MoviesController < ApplicationController
     @movie.user = current_user
 
     if @movie.save
+      current_user.love!(@movie)
     redirect_to movies_path
   else
     render :new
@@ -53,6 +54,8 @@ class MoviesController < ApplicationController
     else
       flash[:warning] = "你已经收藏该电影！"
     end
+    redirect_to movie_path(@movie)
+  end
 
     def quit
       @movie = Movie.find(params[:id])
@@ -66,7 +69,7 @@ class MoviesController < ApplicationController
 
       redirect_to movie_path(@movie)
     end
-      
+
 
   private
 
