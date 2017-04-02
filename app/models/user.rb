@@ -14,4 +14,12 @@ class User < ApplicationRecord
            participated_movies.include?(movie)
          end
 
+         def love!(movie)
+           participated_movies << movie
+         end
+
+         def quit!(movie)
+           participated_movies.delete(movie)
+         end
+
 end
