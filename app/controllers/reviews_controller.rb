@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @moive = Movie.find(params[:movie_id])
+    @movie = Movie.find(params[:movie_id])
     @review = Review.new(review_params)
     @review.movie = @movie
     @review.user = current_user
