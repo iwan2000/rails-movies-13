@@ -15,4 +15,6 @@ Rails.application.routes.draw do
     end
 
   root 'movies#index'
+
+  resources :reviews
 end
