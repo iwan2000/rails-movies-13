@@ -27,14 +27,6 @@ ActiveRecord::Schema.define(version: 20170402065413) do
     t.integer  "user_id"
   end
 
-  create_table "posts", force: :cascade do |t|
-    t.text     "content"
-    t.integer  "group_id"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "reviews", force: :cascade do |t|
     t.text     "content"
     t.integer  "user_id"
